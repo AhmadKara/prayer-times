@@ -1,0 +1,149 @@
+* {
+  font-family: 'Tajawal', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  direction: rtl;
+  background-color: #000016;
+  /* height: 100vh; */
+}
+
+
+header {
+  color: #ffff;
+  padding: 20px;
+  margin: 75px 50px 0 0;
+}
+
+.city-name {
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.date {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+hr.main {
+  margin: 20px 100px;
+  border-color: #4e9eff;
+}
+
+.cards {
+  height: 200px;
+  margin-top: 50px;
+}
+
+.cards .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 12%;
+  height: 65%;
+  background-color: #ffff;
+  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 15px;
+  text-align: center;
+  transition: 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card h3 {
+  color: #3a6cf4;
+  font-size: 20px;
+}
+
+.card p {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+select {
+  width: 200px;
+  height: 35px;
+  font-size: 17px;
+  border-radius: 15px;
+  margin-top: 30px;
+  background: none;
+  color: #4e9eff;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width:450px) {
+  header {
+    color: #ffff;
+    padding: 20px;
+    margin: 50px 20px 0 20px;
+  }
+
+  hr.main {
+    margin: 10px 50px 25px 50px;
+    border-color: #4e9eff;
+  }
+  
+  .city-name {
+    font-size: 50px;
+    font-weight: 500;
+  }
+  
+  .date {
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  .card {
+    width: 60%;
+    height: 65%;
+    background-color: #ffff;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+    text-align: center;
+    transition: 0.5s ease;
+  }
+
+
+  .cards .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card h3 {
+    color: #3a6cf4;
+    font-size: 20px;
+  }
+  
+  .card p {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .form {
+    padding-bottom: 20px;
+  }
+
+}
