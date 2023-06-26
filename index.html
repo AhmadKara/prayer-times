@@ -12,42 +12,42 @@
 <body>
   <div class="main-body">
     <header>
-      <h1 class="city-name">مواقيت الصلاة في <span></span></h1>
+      <h1 class="city-name">مواقيت الصلاة في <span>مكة المكرمة</span></h1>
       <br>
-      <h4 class="date">اليوم</h4>
+      <h4 class="date" id="today"></h4>
     </header>
     <hr class="main">
     <section class="cards">
       <div class="content">
-        <div class="card" id="fajr">
+        <div class="card">
           <h3>الفجر</h3>
           <hr>
-          <p>6:00</p>
+          <p id="fajr">6:00</p>
         </div>
-        <div class="card" id="shoroq">
+        <div class="card">
           <h3>الشروق</h3>
           <hr>
-          <p>6:00</p>
+          <p id="shoroq">6:00</p>
         </div>
-        <div class="card" id="duhr">
+        <div class="card">
           <h3>الظهر</h3>
           <hr>
-          <p>6:00</p>
+          <p id="duhr">6:00</p>
         </div>
-        <div class="card" id="asr">
+        <div class="card">
           <h3>العصر</h3>
           <hr>
-          <p>6:00</p>
+          <p id="asr">6:00</p>
         </div>
-        <div class="card" id="maghrib">
+        <div class="card">
           <h3>المغرب</h3>
           <hr>
-          <p>6:00</p>
+          <p id="maghrib">6:00</p>
         </div>
-        <div class="card" id="isha">
+        <div class="card">
           <h3>العشاء</h3>
           <hr>
-          <p>6:00</p>
+          <p id="isha">6:00</p>
         </div>
       </div>
       <div class="form">
@@ -61,6 +61,7 @@
       </div>
     </section>
   </div>
-  <script src="main.js"></script>
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
