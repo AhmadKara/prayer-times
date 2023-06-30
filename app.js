@@ -21,14 +21,11 @@ window.onload = async function () {
     const day = data.date.hijri.weekday.ar
     const fullDate = data.date.gregorian.date
     today.innerHTML = `${day} ${fullDate}`
-    fajr.innerHTML = data.timings.Fajr;
-    sunrise.innerHTML = data.timings.Sunrise;
-    dhuhr.innerHTML = data.timings.Dhuhr;
-    asr.innerHTML = data.timings.Asr;
-    maghrib.innerHTML = data.timings.Maghrib;
-    isha.innerHTML = data.timings.Isha;
+    fajr.innerHTML = await data.timings.Fajr;
+    sunrise.innerHTML = await data.timings.Sunrise;
+    dhuhr.innerHTML = await data.timings.Dhuhr;
+    asr.innerHTML = await data.timings.Asr;
+    maghrib.innerHTML = await data.timings.Maghrib;
+    isha.innerHTML = await data.timings.Isha;
   })
-
 }
-
-
