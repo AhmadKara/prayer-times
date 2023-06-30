@@ -8,7 +8,7 @@ const isha = document.getElementById('isha')
 
 
 window.onload = async function () {
-  await fetch("http://api.aladhan.com/v1/timingsByCity?country=SA&city=Makkah")
+  await fetch("https://api.aladhan.com/v1/timingsByCity?country=SA&city=Makkah")
   .then(async (res) => {
     return await res.json();
   })
