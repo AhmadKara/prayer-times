@@ -1,30 +1,34 @@
-const params = {
-  country: "SA",
-  city: "Makkah"
+const today = document.getElementById('today') 
+const fajr = document.getElementById('fajr') 
+const sunrise = document.getElementById('sunrise') 
+const dhuhr = document.getElementById('dhuhr') 
+const asr = document.getElementById('asr') 
+const maghrib = document.getElementById('maghrib') 
+const isha = document.getElementById('isha') 
+
+
+window.onload = async function () {
+  await fetch("http://api.aladhan.com/v1/timingsByCity?country=SA&city=Makkah")
+  .then(async (res) => {
+    return await res.json();
+  })
+  .then(async (JSONData) => {
+    const times = await JSONData.data
+    return times
+  })
+  .then(async (data) => {
+    console.log(data)
+    const day = data.date.hijri.weekday.ar
+    const fullDate = data.date.gregorian.date
+    today.innerHTML = `${day} ${fullDate}`
+    fajr.innerHTML = data.timings.Fajr;
+    sunrise.innerHTML = data.timings.Sunrise;
+    dhuhr.innerHTML = data.timings.Dhuhr;
+    asr.innerHTML = data.timings.Asr;
+    maghrib.innerHTML = data.timings.Maghrib;
+    isha.innerHTML = data.timings.Isha;
+  })
+
 }
 
-axios.get('http://api.aladhan.com/v1/timingsByCity', {
-  params: params
-})
-  .then(function (response) {
-    const timing = response.data.data.timings
-    setTimes('fajr', timing.Fajr)
-    setTimes('shoroq', timing.Sunrise)
-    setTimes('duhr', timing.Dhuhr)
-    setTimes('asr', timing.Asr)
-    setTimes('maghrib', timing.Sunset)
-    setTimes('isha', timing.Isha)
-    const readable = response.data.data.date.gregorian.date
-    const weekday = response.data.data.date.hijri.weekday.ar
-    const fulldate = `${weekday} ${readable}`
-    setTimes('today', fulldate)
-    console.log(response.data.data);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
 
-function setTimes(id, time) {
-  document.getElementById(id).innerHTML = time
-}
